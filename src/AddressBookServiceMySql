@@ -161,3 +161,25 @@ mysql> select count(State) from address_book;
 +--------------+
 1 row in set (0.00 sec)
 
+---------------------------------------------------------------------------------
+UC8 -> Sorted alphabetically by person name for a given city
+---------------------------------------------------------------------------------
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from address_book order by LastName;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+2 rows in set (0.01 sec)
+
