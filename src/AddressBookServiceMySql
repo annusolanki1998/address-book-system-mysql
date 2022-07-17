@@ -141,3 +141,23 @@ mysql> select * from address_book where City = 'Gurgaon' or State ='Rajasthan';
 +-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
 2 rows in set (0.00 sec)
 
+---------------------------------------------------------------------------
+UC7 -> Size of the address book by city and state
+---------------------------------------------------------------------------
+
+mysql> select count(City) from address_book;
++-------------+
+| count(City) |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.05 sec)
+
+mysql> select count(State) from address_book;
++--------------+
+| count(State) |
++--------------+
+|            2 |
++--------------+
+1 row in set (0.00 sec)
+
