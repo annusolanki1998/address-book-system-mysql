@@ -86,3 +86,28 @@ mysql> select * from address_book;
 | Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
 +-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
 3 rows in set (0.00 sec)
+
+------------------------------------------------------------------------------------------------------
+UC5-->Delete contact with using person name
+------------------------------------------------------------------------------------------------------
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
+| Rajni     | Singh    | Patna      | Patna   | Bihar     | choti@gmail.com            |  851128 |    90032456 |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+
+mysql> delete from address_book where FirstName = 'Rajni';
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+2 rows in set (0.00 sec)
