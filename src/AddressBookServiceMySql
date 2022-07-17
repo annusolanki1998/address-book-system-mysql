@@ -68,3 +68,21 @@ mysql> select * from address_book;
 | Garima    | Jain     | Ajmer   | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
 +-----------+----------+---------+---------+-----------+----------------------------+---------+-------------+
 3 rows in set (0.01 sec)
+
+-----------------------------------------------------------------------------------------------------
+UC4 -> Edit existing Contact with using their name
+-----------------------------------------------------------------------------------------------------
+
+mysql> update address_book set Address = 'Bijaynagar' where FirstName = 'Garima';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
+| Rajni     | Singh    | Patna      | Patna   | Bihar     | choti@gmail.com            |  851128 |    90032456 |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+3 rows in set (0.00 sec)
