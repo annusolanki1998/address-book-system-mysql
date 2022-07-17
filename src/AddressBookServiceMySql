@@ -47,3 +47,24 @@ mysql> describe address_book;
 | PhoneNumber | int          | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.12 sec)
+
+-------------------------------------------------------------------------
+UC3 -> Inserting values into a table
+-------------------------------------------------------------------------
+
+mysql> insert into address_book(FirstName,LastName,Address,City,State,Email,ZipCode,PhoneNumber)values
+    -> ('Annu','Kumari','Gurgaon','Gurgaon','Haryana','annusinghraj1998@gmail.com',122002,70032654),
+    -> ('Rajni','Singh','Patna','Patna','Bihar','choti@gmail.com',851128,90032456),
+    -> ('Garima','Jain','Ajmer','Ajmer','Rajasthan','garima12@gmail.com',851120,70032459);
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++-----------+----------+---------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+---------+---------+-----------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
+| Rajni     | Singh    | Patna   | Patna   | Bihar     | choti@gmail.com            |  851128 |    90032456 |
+| Garima    | Jain     | Ajmer   | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
++-----------+----------+---------+---------+-----------+----------------------------+---------+-------------+
+3 rows in set (0.01 sec)
