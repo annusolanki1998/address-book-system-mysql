@@ -88,7 +88,7 @@ mysql> select * from address_book;
 3 rows in set (0.00 sec)
 
 ------------------------------------------------------------------------------------------------------
-UC5-->Delete contact with using person name
+UC5 -> Delete contact with using person name
 ------------------------------------------------------------------------------------------------------
 
 mysql> select * from address_book;
@@ -111,3 +111,33 @@ mysql> select * from address_book;
 | Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
 +-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
 2 rows in set (0.00 sec)
+
+----------------------------------------------------------------------------------------
+UC6 -> Ability to retrieve the contact belonging to their city or state
+----------------------------------------------------------------------------------------
+
+mysql> select * from address_book where City = 'Gurgaon';
++-----------+----------+---------+---------+---------+----------------------------+---------+-------------+
+| FirstName | LastName | Address | City    | State   | Email                      | ZipCode | PhoneNumber |
++-----------+----------+---------+---------+---------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon | Gurgaon | Haryana | annusinghraj1998@gmail.com |  122002 |    70032654 |
++-----------+----------+---------+---------+---------+----------------------------+---------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from address_book where City = 'Ajmer' or State ='Rajasthan';
++-----------+----------+------------+-------+-----------+--------------------+---------+-------------+
+| FirstName | LastName | Address    | City  | State     | Email              | ZipCode | PhoneNumber |
++-----------+----------+------------+-------+-----------+--------------------+---------+-------------+
+| Garima    | Jain     | Bijaynagar | Ajmer | Rajasthan | garima12@gmail.com |  851120 |    70032459 |
++-----------+----------+------------+-------+-----------+--------------------+---------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from address_book where City = 'Gurgaon' or State ='Rajasthan';
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
+2 rows in set (0.00 sec)
+
