@@ -239,3 +239,32 @@ mysql> select * from address_book;
 | Rajni     | Singh    | Kankarbagh | Patna   | Bihar     | rajni@1234                 |  851128 |     9876543 | SS       | Family       |
 +-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
 3 rows in set (0.00 sec)
+
+----------------------------------------------------------------
+UC10 -> Count contacts through contactType for address book
+----------------------------------------------------------------
+
+mysql> SELECT COUNT(contactType) FROM address_book WHERE ContactType='Friend';
++--------------------+
+| COUNT(contactType) |
++--------------------+
+|                  1 |
++--------------------+
+1 row in set (0.29 sec)
+
+mysql> SELECT COUNT(contactType) FROM address_book WHERE ContactType='Professional';
++--------------------+
+| COUNT(contactType) |
++--------------------+
+|                  1 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(contactType) FROM address_book WHERE ContactType='Family';
++--------------------+
+| COUNT(contactType) |
++--------------------+
+|                  1 |
++--------------------+
+1 row in set (0.00 sec)
+
