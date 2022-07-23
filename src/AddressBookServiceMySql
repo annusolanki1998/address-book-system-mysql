@@ -183,3 +183,59 @@ mysql> select * from address_book order by LastName;
 +-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+
 2 rows in set (0.01 sec)
 
+-----------------------------------------------------------------
+UC9 -> Ability to identify each Address Book with name and Type
+-----------------------------------------------------------------
+
+mysql> ALTER TABLE address_book add BookName varchar(30) not null ,add ContactType varchar(30) not null;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> Describe address_book;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| FirstName   | varchar(20)  | NO   |     | NULL    |       |
+| LastName    | varchar(20)  | NO   |     | NULL    |       |
+| Address     | varchar(100) | NO   |     | NULL    |       |
+| City        | varchar(30)  | NO   |     | NULL    |       |
+| State       | varchar(30)  | NO   |     | NULL    |       |
+| Email       | varchar(30)  | NO   |     | NULL    |       |
+| ZipCode     | int          | NO   |     | NULL    |       |
+| PhoneNumber | int          | NO   |     | NULL    |       |
+| BookName    | varchar(30)  | NO   |     | NULL    |       |
+| ContactType | varchar(30)  | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+10 rows in set (0.09 sec)
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+-------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber | BookName | ContactType |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+-------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 |          |             |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 |          |             |
+| Rajni     | Singh    | Kankarbagh | Patna   | Bihar     | rajni@1234                 |  851128 |     9876543 |          |             |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+-------------+
+3 rows in set (0.01 sec)
+
+mysql> UPDATE address_book SET BookName = 'SA',ContactType = 'Professional' WHERE FirstName = 'Annu';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book SET BookName = 'SR',ContactType = 'Friend' WHERE FirstName = 'Garima';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book SET BookName = 'SS',ContactType = 'Family' WHERE FirstName = 'Rajni';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber | BookName | ContactType  |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 | SA       | Professional |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 | SR       | Friend       |
+| Rajni     | Singh    | Kankarbagh | Patna   | Bihar     | rajni@1234                 |  851128 |     9876543 | SS       | Family       |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
+3 rows in set (0.00 sec)
