@@ -268,3 +268,26 @@ mysql> SELECT COUNT(contactType) FROM address_book WHERE ContactType='Family';
 +--------------------+
 1 row in set (0.00 sec)
 
+-------------------------------------------------------------
+UC11 ->  Ability to add person to both Friend and Family
+-------------------------------------------------------------
+
+mysql> insert into address_book (FirstName,LastName,address,City,State,Email,ZipCode,PhoneNumber,BookName,ContactType)values
+    -> ('Ramendra','Singh','Varodra','Surat','Gujrat','ramendra@432',654328,9876543,'RA','Family');
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into address_book (FirstName,LastName,address,City,State,Email,ZipCode,PhoneNumber,BookName,ContactType)values
+    -> ('Rishav','Rajput','Dwarka','Delhi','Delhi','rishav@432',654328,67895496,'OJ','Friend');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from address_book;
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
+| FirstName | LastName | Address    | City    | State     | Email                      | ZipCode | PhoneNumber | BookName | ContactType  |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
+| Annu      | Kumari   | Gurgaon    | Gurgaon | Haryana   | annusinghraj1998@gmail.com |  122002 |    70032654 | SA       | Professional |
+| Garima    | Jain     | Bijaynagar | Ajmer   | Rajasthan | garima12@gmail.com         |  851120 |    70032459 | SR       | Friend       |
+| Rajni     | Singh    | Kankarbagh | Patna   | Bihar     | rajni@1234                 |  851128 |     9876543 | SS       | Family       |
+| Ramendra  | Singh    | Varodra    | Surat   | Gujrat    | ramendra@432               |  654328 |     9876543 | RA       | Family       |
+| Rishav    | Rajput   | Dwarka     | Delhi   | Delhi     | rishav@432                 |  654328 |    67895496 | OJ       | Friend       |
++-----------+----------+------------+---------+-----------+----------------------------+---------+-------------+----------+--------------+
+5 rows in set (0.00 sec)
